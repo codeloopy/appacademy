@@ -4,7 +4,7 @@
 # do not reverse the order of words in the sentence.
 
 def reverse_words(sent)
-  words = sent.split()
+  words = sent.split(' ')
   reverse_words = []
 
   words.each do |word|
