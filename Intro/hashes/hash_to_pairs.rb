@@ -4,9 +4,7 @@
 
 def hash_to_pairs(hash)
   arr = []
-
   hash.each { |k,v| arr << [k,v] }
-
   return arr
 end
 
