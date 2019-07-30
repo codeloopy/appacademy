@@ -2,29 +2,29 @@
 # and returns an array containing all of the prime factors
 # of the given number.
 
-# def prime_factors(num)
-#   count = Hash.new(0)
-#   result = []
-#   i = 2
+def prime_factors(num)
+  count = Hash.new(0)
+  result = []
+  i = 2
 
-#   while i <= num
-#     if prime?(i)
-#       num /= i
-#       count[i] += 1
-#     end
-#     i += 1
-#   end
+  while i <= num
+    if prime?(i)
+      num /= i
+      count[i] += 1
+    end
+    i += 1
+  end
 
-#   result = count.each_key.select() {|k| k}
+  result = count.each_key.select() {|k| k}
 
-#   return result
-# end
+  return result
+end
 
-# def prime?(num)
-#   return false if num < 2
-#   (2...num).each { |div| return false if num % div == 0 }
-#   return true
-# end
+def prime?(num)
+  return false if num < 2
+  (2...num).each { |div| return false if num % div == 0 }
+  return true
+end
 
 
 # print prime_factors(24) #=> [2, 3]
