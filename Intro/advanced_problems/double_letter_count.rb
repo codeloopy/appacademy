@@ -26,7 +26,7 @@ puts double_letter_count("bootcamp") #=> 1
 # def double_letter_count(string)
 #   count = 0
 
-#   string.each_char_with_index do |char, index|
+#   string.each_char.with_index do |char, index|
 #     if char == string[index + 1]
 #       count += 1
 #     end
