@@ -1,5 +1,6 @@
-These are my exercise files for a/A FREE online bootcamp, this is one of the most prestigious bootcamps in the US probably the world.
-![app Academy Logo](https://lever-client-logos.s3.amazonaws.com/58d4d1db-0eca-41d1-aa71-d8e40214ca16-1532545542352.png)
+These are my solution to the exercise files for a/A FREE online bootcamp with some of the aA's solution, this is one of the most prestigious bootcamps in the US probably the world.
+
+![app Academy Logo](/app_academy_logo.png)
 
 #Land one of the highest paying jobs - for free
 
