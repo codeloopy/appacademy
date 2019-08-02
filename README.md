@@ -19,4 +19,4 @@ Don’t struggle with setting up your coding environment for hours. We’ve buil
 
 ###This opportunity is super exciting! don't hesitate to check them out.
 
-https://open.appacademy.io/ll
+https://open.appacademy.io/
