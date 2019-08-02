@@ -4,26 +4,26 @@
 # in the same order. Solve this without using .sort
 
 
-# def anagrams?(word1, word2)
-#   counter = 0
-#   i = 0
+def anagrams?(word1, word2)
+  counter = 0
+  i = 0
   
-#   if word1.length != word2.length
-#     return false
-#   else
-#     while i < word1.length
-#       counter += 1 if word2.include?(word1[i])
-#       i += 1
-#     end
-#   end
+  if word1.length != word2.length
+    return false
+  else
+    while i < word1.length
+      counter += 1 if word2.include?(word1[i])
+      i += 1
+    end
+  end
 
-#   return counter == word1.length ? true : false
-# end
+  return counter == word1.length ? true : false
+end
 
-# puts anagrams?("cat", "act")          #=> true
-# puts anagrams?("restful", "fluster")  #=> true
-# puts anagrams?("cat", "dog")          #=> false
-# puts anagrams?("boot", "bootcamp")    #=> false
+puts anagrams?("cat", "act")          #=> true
+puts anagrams?("restful", "fluster")  #=> true
+puts anagrams?("cat", "dog")          #=> false
+puts anagrams?("boot", "bootcamp")    #=> false
 
 
 # # aA's Solution - muach cleaner
