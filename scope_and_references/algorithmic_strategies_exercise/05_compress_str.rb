@@ -4,7 +4,21 @@
 
 
 def compress_str(str)
+  new_str = str.split('')
+  count = 1
+  result = []
 
+  (0...new_str.length).each do |i|
+    if new_str[i] == new_str[i+1]
+      count += 1
+    else
+      result << count.to_s
+      result << new_str[i]
+      count = 1
+    end
+  end
+  
+  result.map {|e| e.gsub('1','')}.join('')
 end
 
 p compress_str("aaabbc")        # => "3a2bc"
