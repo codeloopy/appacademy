@@ -13,3 +13,11 @@ p filter_lengths(["pear", "dragonfruit", "fig", "clementine"], 4)   # => ["pear"
 p filter_lengths(["pear", "dragonfruit", "fig", "clementine"])      # => ["dragonfruit", "clementine"]
 p filter_lengths(["cat", "dog", "capybara", "mouse"], 7)            # => ["capybara"]
 p filter_lengths(["cat", "dog", "capybara", "mouse"])               # => ["capybara", "mouse"]
+
+
+
+# # aA's Solution
+
+# def filter_lengths(strings, size=5)
+#   strings.select { |words| words.length >= size }
+# end

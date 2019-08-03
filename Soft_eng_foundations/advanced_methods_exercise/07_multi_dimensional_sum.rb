@@ -20,3 +20,12 @@ arr_2 = [
 ]
 
 p multi_dimensional_sum(arr_2)    # => 24
+
+
+
+
+# aA's solution
+
+# def multi_dimensional_sum(array)
+#     array.flatten.sum
+# end

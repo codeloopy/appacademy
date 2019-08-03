@@ -19,3 +19,10 @@ p only_vowels?("cat")     # => false
 p only_vowels?("over")    # => false
 
 
+
+# # aA's solution
+
+# def only_vowels?(str)
+#   vowels = 'aeiou'
+#   str.split('').all? { |char| vowels.include?(char) }
+# end

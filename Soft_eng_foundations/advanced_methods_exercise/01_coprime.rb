@@ -19,3 +19,12 @@ p coprime?(25, 12)    # => true
 p coprime?(7, 11)     # => true
 p coprime?(30, 9)     # => false
 p coprime?(6, 24)     # => false
+
+
+# # aA's solution
+
+# def coprime?(num_1, num_2)
+#   (2..num_1).none? do |divisor|
+#     num_1 % divisor == 0 && num_2 % divisor == 0
+#   end
+# end
