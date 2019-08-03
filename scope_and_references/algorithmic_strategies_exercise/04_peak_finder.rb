@@ -5,19 +5,9 @@
 
 def peak_finder(arr)
   peaks = []
-  i = 0
-
-  (0...arr.length - 1).each do |i|
-    if arr[i] > arr[i+1]
-      peaks << arr[i]
-    end
-  end
-
-  if arr[-1] > arr[-2]
-    peaks << arr[-1]
-  end
-
-  return peaks
+  (0...arr.length - 1).each { |i| peaks << arr[i] if arr[i] > arr[i+1] }
+  peaks << arr[-1] if arr[-1] > arr[-2]
+  peaks
 end
 
 p peak_finder([1, 3, 5, 4])         # => [5]
