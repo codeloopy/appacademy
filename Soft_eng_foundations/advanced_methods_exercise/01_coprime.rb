@@ -3,6 +3,17 @@
 # The method should return false otherwise. For example coprime?(25, 12) is true because
 # 1 is the only number that divides both 25 and 12.
 
+def coprime?(num1, num2)
+  return (divisible(num1) & divisible(num2)).size <= 1
+end
+
+def divisible(number)
+  new_num = []
+  (1...number).each do |val|
+    new_num << val if number % val == 0
+  end
+  return new_num
+end
 
 p coprime?(25, 12)    # => true
 p coprime?(7, 11)     # => true

@@ -3,18 +3,24 @@
 # The method should return false otherwise.
 
 
+
+def adult_in_group?(people)
+  over = people.select { |each_hash| each_hash if each_hash[:age] >= 18 }
+  over.any?
+end
+
 people_1 = [
-    {name: "Jack", age: 17},
-    {name: "Jill", age: 21},
-    {name: "Alice", age: 15},
-    {name: "Bob", age: 16}
+  {name: "Jack", age: 17},
+  {name: "Jill", age: 21},
+  {name: "Alice", age: 15},
+  {name: "Bob", age: 16}
 ]
 p adult_in_group?(people_1)    # => true
 
 people_2 = [
-    {name: "Jane", age: 12},
-    {name: "John", age: 13},
-    {name: "Ashley", age: 10},
-    {name: "Bill", age: 16}
+  {name: "Jane", age: 12},
+  {name: "John", age: 13},
+  {name: "Ashley", age: 10},
+  {name: "Bill", age: 16}
 ]
 p adult_in_group?(people_2)    # => false
