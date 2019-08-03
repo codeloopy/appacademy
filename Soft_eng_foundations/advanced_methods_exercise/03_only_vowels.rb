@@ -3,6 +3,16 @@
 # The method should return false otherwise.
 
 
+def only_vowels?(str)
+  vowels = 'aeiou'
+
+  str.each_char do |letter|
+    return false if !vowels.include?(letter)
+  end
+
+  return true
+end
+
 p only_vowels?("aaoeee")  # => true
 p only_vowels?("iou")     # => true
 p only_vowels?("cat")     # => false
