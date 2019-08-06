@@ -25,3 +25,33 @@ p compress_str("aaabbc")        # => "3a2bc"
 p compress_str("xxyyyyzz")      # => "2x4y2z"
 p compress_str("qqqqq")         # => "5q"
 p compress_str("mississippi")   # => "mi2si2si2pi"
+
+
+
+
+
+
+
+
+# aA's solution
+def compress_str(str)
+  compress = ''
+  i = 0
+
+  while i < str.length
+    char = str[i]
+    while
+      char === str[i]
+      count += 1
+      i += 1
+    end
+
+    if count > 1
+      compress += (count.to_s + char)
+    else
+      compress += char
+    end
+  end
+  
+  compress
+end
