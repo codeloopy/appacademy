@@ -25,3 +25,21 @@ p array_2.object_id         # => 70119569668160
 result_2 = ele_replace!(array_2, "Matthias"=>"J", "Mashu"=>"D")
 p result_2                  # => ["J", "Simcha", "D", "David"]
 p result_2.object_id        # => 70119569668160
+
+
+
+
+
+
+
+# # aAs Solution
+
+# def ele_replace!(array, hash)
+#   array.map! do |ele|
+#     if hash.has_key?(ele)
+#       hash[ele]
+#     else
+#       ele
+#     end
+#   end
+# end

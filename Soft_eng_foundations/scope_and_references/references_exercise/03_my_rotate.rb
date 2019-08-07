@@ -50,3 +50,27 @@ p array_3.object_id                 # => 70354216016500
 result_3 = my_rotate!(array_3, -3)
 p result_3                          # => ["b", "c", "d", "a"]
 p result_3.object_id                # => 70354216016500
+
+
+
+
+
+
+# # aA's Solution
+
+# def my_rotate!(array, amt)
+#   if amount > 0
+#     amt.times do
+#       ele = array.shift
+#       array << ele
+#     end
+#   else
+#     (-amt).times do
+#       ele = array.pop
+#       array.unshift(ele)
+#     end
+
+#   end
+
+#   array
+# end
