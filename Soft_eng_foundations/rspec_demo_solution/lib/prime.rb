@@ -1,9 +1,10 @@
-def prime?(num)
-  return false if num < 2
+def prime?(n)
+  return false if n < 2
 
-  (2...num).each do |i|
-    return false if num % i == 0
+  (2...n).each do |i|
+    return false if n % i == 0
   end
 
   true
 end
+

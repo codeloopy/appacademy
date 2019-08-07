@@ -1,3 +1,3 @@
-def add(num_1, num_2)
-  num_1 + num_2
+def add(n1, n2)
+  n1 + n2
 end
