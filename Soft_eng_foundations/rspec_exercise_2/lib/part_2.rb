@@ -40,3 +40,36 @@ def palindrome_substrings(str)
 	end
 	final
 end
+
+
+
+
+
+## aA's Solution
+
+# def palindrome?(str)
+# 	str.each_char.with_index do |char, i|
+# 		if string[i] != string[-i - 1]
+# 			return false
+# 		end
+# 	end
+# 	true
+# end
+
+
+
+# def substrings(str)
+# 	subs = []
+# 	(0...str.length).each do |strart_idx|
+# 		(strart_idx...str.length).each do |end_idx|
+# 			subs << str[strart_idx..end_idx]
+# 		end
+# 	end
+
+# 	subs
+# end
+
+
+# def palindrome_substrings(str)
+# 	substrings(str).select { |substr| palindrome?(substr) && substr.length > 1 }
+# end
