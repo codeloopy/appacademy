@@ -11,8 +11,7 @@ def prime(num)
     (2...num).each do |factor|
         if num % factor == 0
             return false
-        else
-            return true
         end
     end
+    return true
 end
