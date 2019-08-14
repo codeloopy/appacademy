@@ -1,5 +1,6 @@
 def select_even_nums(nums)
-  nums.select { |n| n.even? }
+  nums.select(&:even?)
+  # nums.select { |n| n.even? }
 end
 
 
