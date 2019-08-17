@@ -33,5 +33,6 @@ class Dog
   
   def favorite_food?(food_item)
     @favorite_foods.any? { |food| food_item.downcase.include?(food.downcase) }
+    #@favorite_foods.map(&:downcase).include(food_item.downcase)   #aA's solution
   end
 end
