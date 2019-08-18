@@ -46,7 +46,7 @@ class Bootcamp
   end
 
   def add_grade(student, grade)
-    if @students.include?(student)
+    if @students.include?(student)   #<-- aA's solution:   if self.enrolled?(student)
       @grades[student] << grade
       true
     else
