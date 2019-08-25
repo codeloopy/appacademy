@@ -23,8 +23,7 @@ class Startup
 
   def hire(employee_name, title)
     if @salaries.include?(title)
-      new_employee = Employee.new(employee_name, title)
-      @employees << new_employee
+      @employees << Employee.new(employee_name, title)
     else
       raise "Error: invalid title"
     end
@@ -51,6 +50,28 @@ class Startup
   def payday
     @employees.each { |employee| self.pay_employee(employee) }
   end
-  
+
+
+  # Part3
+  def average_salary
+    total = 0
+    @employees.each { |employee| total += @salaries[employee.title] }
+    total / @employees.count
+  end
+
+
+  def close
+    @employees = []
+    @funding = 0
+  end
+
+
+  def acquire(new_startup)
+    @funding += new_startup.funding
+    new_salaries = @salaries.merge(new_startup.salaries) {|k, old, new| old}
+    @salaries = new_salaries
+    @employees.concat(new_startup.employees)
+    new_startup.close
+  end
 
 end
