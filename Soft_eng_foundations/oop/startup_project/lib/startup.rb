@@ -12,12 +12,12 @@ class Startup
 
 
   def valid_title?(title)
-    @salaries.include?(title)
+    @salaries.include?(title) # <--- aA's solution: @salaries.has_key?(title)
   end
 
 
   def > (another_startup)
-    @funding > another_startup.funding
+    @funding > another_startup.funding # <--- aA's solution: self.funding > another_startup.funding
   end 
 
 
@@ -28,6 +28,15 @@ class Startup
       raise "Error: invalid title"
     end
   end
+
+  #aA's solution
+  # def hire(employee_name, title)
+  #   if self.valid_title?(title)
+  #     @employee << Employee.new(employee_name, title)
+  #   else
+  #     raise "title is invalid"
+  #   end
+  # end
 
 
   def size
@@ -56,7 +65,7 @@ class Startup
   def average_salary
     total = 0
     @employees.each { |employee| total += @salaries[employee.title] }
-    total / @employees.count
+    total / @employees.count * 1.0
   end
 
 
@@ -73,5 +82,17 @@ class Startup
     @employees.concat(new_startup.employees)
     new_startup.close
   end
+
+  # aA's solution
+  # def acquire(new_startup)
+  #   @funding += new_startup.funding
+  #   new_startup.salaries do |title, amount|
+  #     if !@salaries.has_key?(title)
+  #       @salaries[title] = amount
+  #     end
+  #   end
+  #   @employees += new_startup.employees
+  #   new_startup.close
+  # end
 
 end
