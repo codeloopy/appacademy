@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Code
 
   attr_reader :pegs
@@ -44,9 +46,34 @@ class Code
     @pegs.length
   end
 
+
   # PART2
-  def num_exact_matches(guess)
-    
+  def num_exact_matches(guess_object)
+    pegs = guess_object.pegs
+    count = 0
+    pegs.each_with_index { |char, i| count += 1 if char == @pegs[i] }
+    count
+  end
+  
+  # debugger
+
+  def num_near_matches(guess_object)
+    pegs = guess_object.pegs
+    count = 0
+    pegs.each_with_index do |char, i|
+      count += 1 if @pegs.include?(char) && char != @pegs[i]
+    end
+    count
+  end
+
+
+  def ==(guess_object)
+    pegs = guess_object.pegs
+
+    if @pegs.count == pegs.count
+      return (@pegs - pegs).empty?
+    end
+    return false
   end
 
 end
