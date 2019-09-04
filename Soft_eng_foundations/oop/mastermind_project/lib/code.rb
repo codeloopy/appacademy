@@ -1,3 +1,4 @@
+# Commented codeblocks are aA's solution
 require 'byebug'
 
 class Code
@@ -12,28 +13,35 @@ class Code
   }
 
   def self.valid_pegs?(chars)
-    chars.all? { |c| POSSIBLE_PEGS.key?(c.upcase) }
+    chars.all? { |c| POSSIBLE_PEGS.has_key?(c.upcase) }
   end
 
   
-  def initialize(pegs)
-    if !Code.valid_pegs?(pegs)
-      raise "Error: invalid pegs"
-    end
-    
-    @pegs = pegs.map(&:upcase)
-  end
-
-
   def self.random(length)
     flatten_keys = POSSIBLE_PEGS.keys
-    new_arr = Array.new(length).map {|i| flatten_keys.sample}
+    new_arr = Array.new(length).map { |i| flatten_keys.sample }
     Code.new(new_arr)
   end
+
+  # def self.random(length)
+  #   random_pegs = []
+  #   length.times { random_pegs << POSSIBLE_PEGS.keys.sample }
+  #   Code.new(random_pegs)
+  # end
 
 
   def self.from_string(pegs)
     Code.new(pegs.split(''))    
+  end
+
+
+
+  def initialize(pegs)
+    if Code.valid_pegs?(pegs)
+      @pegs = pegs.map(&:upcase)
+    else
+      raise "Error: invalid pegs"
+    end
   end
 
 
@@ -48,6 +56,7 @@ class Code
 
 
   # PART2
+
   def num_exact_matches(guess_object)
     pegs = guess_object.pegs
     count = 0
@@ -55,7 +64,13 @@ class Code
     count
   end
   
-  # debugger
+  # def num_exact_matches(guess_code)
+  #   count = 0
+  #   (0...guess_code.length).each do |i|
+  #     count += 1 if guess_code[i] == self[i]
+  #   end
+  #   count
+  # end
 
   def num_near_matches(guess_object)
     pegs = guess_object.pegs
@@ -66,6 +81,15 @@ class Code
     count
   end
 
+  # def num_exact_matches(guess_code)
+  #   count = 0
+  #   (0...guess_code.length).each do |i|
+  #     count += 1 if guess_code[i] != self[i] && self.pegs.include?(guess_code[i])
+  #   end
+  #   count
+  # end
+
+
 
   def ==(guess_object)
     pegs = guess_object.pegs
@@ -75,5 +99,9 @@ class Code
     end
     return false
   end
+
+  # def ==(other_code)
+  #   self.pegs == other_code.pegs
+  # end
 
 end
