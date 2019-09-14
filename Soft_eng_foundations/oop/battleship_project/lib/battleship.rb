@@ -48,11 +48,18 @@ class Battleship
 
 
   def game_over?
-    if @board.win? || @board.lose?
+    if self.win? || self.lose?
       return true
     else
       return false
     end
+  end
+
+
+  def turn
+    @remaining_misses -= 1 if !@board.attack(@player.get_move)
+    @board.print
+    puts @remaining_misses
   end
 
 end
