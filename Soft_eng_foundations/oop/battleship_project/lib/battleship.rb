@@ -3,6 +3,8 @@ require_relative "player"
 
 class Battleship
 
+  attr_reader :board, :player
+
   def initialize(board_length)
     @player = Player.new()
     @board = Board.new(board_length)
@@ -10,19 +12,9 @@ class Battleship
   end
 
 
-  def board
-    @board
-  end
-  
-  
-  def player
-    @player
-  end
-  
-  
   def start_game
     @board.place_random_ships
-    puts "#{@board.size / 4} ships are on the board"
+    puts "#{@board.num_ships} ships are on the board"
     @board.print
   end
 
@@ -61,5 +53,14 @@ class Battleship
     @board.print
     puts @remaining_misses
   end
+
+  # def turn   #aA's solution
+  #   pos = @player.get_move
+  #   if @board.attack(pos) == false
+  #     @remaining_misses -= 1
+  #   end
+  #   @board.print
+  #   puts "Remaining missed: #{@remaining_misses}"
+  # end
 
 end
