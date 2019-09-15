@@ -40,19 +40,31 @@ class Board
 
 
   #PART 2
-
   def attack(pos)
-    row, col = pos
 
-    if @grid[row][col] == :S
-      @grid[row][col] = :H
+    if self[pos] == :S
+      self[pos] = :H
       puts "You sunk my battleship!"
       return true
     else
-      @grid[row][col] = :X
+      self[pos] = :X
       return false
     end
+
   end
+
+  # def attack(pos)
+  #   row, col = pos
+
+  #   if @grid[row][col] == :S
+  #     @grid[row][col] = :H
+  #     puts "You sunk my battleship!"
+  #     return true
+  #   else
+  #     @grid[row][col] = :X
+  #     return false
+  #   end
+  # end
 
 
   def place_random_ships
