@@ -15,7 +15,7 @@
 def pow(base, exponent)
   return 1 if exponent == 0
   
-  base * exponent
+  # base * exponent
   base * pow(base, exponent - 1)
 end
 
@@ -112,22 +112,33 @@ end
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
 
-# require 'byebug'
 
 def flatten(data)
   im_flatten = []
 
-  if !data.is_a? Array
+  if !data.is_a?(Array)
     data.split
   else
     data.each do |item|
-      if !item.is_a? Array
+      if !item.is_a?(Array)
         im_flatten << item
       else
-        # debugger
         im_flatten += flatten(item)
       end
     end
     im_flatten
   end
 end
+
+
+# # aA's solution
+# def flatten(data)
+#   return [data] if !data.is_a?(Array)
+
+#   flattened = []
+#   data.each do |el|
+#     flattened += flatten(el)
+#   end
+
+#   flattened
+# end
