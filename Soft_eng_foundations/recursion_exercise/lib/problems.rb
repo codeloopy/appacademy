@@ -11,6 +11,7 @@
 # pow(2, 5) # => 32
 # pow(3, 4) # => 81
 # pow(4, 3) # => 64
+
 def pow(base, exponent)
   return 1 if exponent == 0
   
@@ -37,6 +38,7 @@ end
 # lucas_number(3)   # =>    4
 # lucas_number(5)   # =>    11
 # lucas_number(9)   # =>    76
+
 def lucas_number(n)
   return 2 if n == 0
   return 1 if n == 1
@@ -56,6 +58,7 @@ end
 # sum_array([5])            # => 5
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
+
 def sum_array(array)
   return 0 if array.empty?
   array[0] + sum_array(array[1..-1])
@@ -73,6 +76,7 @@ end
 # reverse_string("c")           # => "c"
 # reverse_string("internet")    # => "tenretni"
 # reverse_string("friends")     # => "sdneirf"
+
 def reverse_string(str)
   return str if str.empty? || str.length == 1
   str[-1] + reverse_string(str[0...-1])
@@ -108,9 +112,22 @@ end
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
 
-def flatten(data)
-  if !data.is_a? Array
-    %w(data)
-  end
+# require 'byebug'
 
+def flatten(data)
+  im_flatten = []
+
+  if !data.is_a? Array
+    data.split
+  else
+    data.each do |item|
+      if !item.is_a? Array
+        im_flatten << item
+      else
+        # debugger
+        im_flatten += flatten(item)
+      end
+    end
+    im_flatten
+  end
 end
