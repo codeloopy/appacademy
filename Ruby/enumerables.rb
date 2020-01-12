@@ -130,34 +130,3 @@ class Array
 
 
 end
-
-
-
-
-
-=begin
-My Reverse
-Write a method that returns a new array containing all the elements
-of the original array in reverse order.
-
-Example:
-
-[ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
-[ 1 ].my_reverse               #=> [1]
-Review
-Now that we're all warmed up, let's review the iteration exercises from
-the prepwork. Implement the following methods:
-
-#factors(num)
-#bubble_sort!(&prc)
-#bubble_sort(&prc)
-#substrings(string)
-#subwords(word, dictionary)
-
-Although these exercises are from the prepwork and come with specs, use this opportunity to practice your own testing skills. Write out each method, think of a few different example cases, and test out your code in pry.
-
-If you are having a tough time thinking of example cases, check out the specs. You can use those examples to test your solutions. Don't forget to move your enumerables_array.rb into a lib directory!
-
-Did you find this lesson helpful?
-
-=end
