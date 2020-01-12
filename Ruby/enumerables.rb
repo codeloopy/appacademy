@@ -103,7 +103,7 @@ class Array
   end
 
 
-  def my_join(sym = "")
+  def my_join(sym = '')
     i = 0
     new_word = ''
 
@@ -115,6 +115,20 @@ class Array
     new_word + self[-1]
   end
 
+
+  def my_reverse
+    revsd = []
+    i = self.length - 1
+    
+    while i >= 0 
+      revsd << self[i]
+    i -= 1  
+    end
+
+    revsd
+  end
+
+
 end
 
 
@@ -122,17 +136,6 @@ end
 
 
 =begin
-My Join
-my_join returns a single string containing all the elements of the array,
-separated by the given string separator. If no separator is given,
-an empty string is used.
-
-Example:
-
-a = [ "a", "b", "c", "d" ]
-a.my_join         # => "abcd"
-a.my_join("$")    # => "a$b$c$d"
-
 My Reverse
 Write a method that returns a new array containing all the elements
 of the original array in reverse order.
