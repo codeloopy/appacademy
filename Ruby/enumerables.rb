@@ -1,7 +1,4 @@
 class Array
-
-  # ENUMERABLE
-
   def my_each(&prc)
     i = 0
     while i < self.length
@@ -27,7 +24,7 @@ class Array
     i = 0
 
     while i < self.length
-      new_arr << self[i] if !prc.call(self[i])
+      new_arr << self[i] unless prc.call(self[i])
       i += 1
     end
 
@@ -39,6 +36,7 @@ class Array
 
     while i < self.length
       return true if proc.call(self[i])
+
       i += 1
     end
 
