@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
+# Extending Array class for enumerables
 class Array
   def my_each(&prc)
     i = 0
-    while i < self.length
+    # while i < self.length -> before Rubocop
+    while i < length
       prc.call(self[i])
       i += 1
     end
@@ -12,7 +16,8 @@ class Array
     new_arr = []
     i = 0
 
-    while i < self.length
+    # while i < self.length -> before Rubocop
+    while i < length
       new_arr << self[i] if prc.call(self[i])
       i += 1
     end
@@ -23,7 +28,8 @@ class Array
     new_arr = []
     i = 0
 
-    while i < self.length
+    # while i < self.length -> before Rubocop
+    while i < length
       new_arr << self[i] unless prc.call(self[i])
       i += 1
     end
@@ -34,8 +40,9 @@ class Array
   def my_any?(&prc)
     i = 0
 
-    while i < self.length
-      return true if proc.call(self[i])
+    # while i < self.length -> before Rubocop
+    while i < length
+      return true if prc.call(self[i])
 
       i += 1
     end
@@ -47,14 +54,14 @@ class Array
     i = 0
     count = 0
 
-    while i < self.length
-      if proc.call(self[i])
-        count += 1
-      end
+    # while i < self.length -> before Rubocop
+    while i < length
+      count += 1 if prc.call(self[i])
       i += 1
     end
 
-    return true if self.length == count
+    # return true if self.length == count -> before Rubocop
+    return true if length == count
 
     false
   end
@@ -62,7 +69,8 @@ class Array
   # ARRAY
 
   def my_flatten(new_arr = [])
-    self.each do |ele|
+    # self.each do |ele| -> before Rubocop
+    each do |ele|
       if ele.is_a?(Array)
         new_arr = ele.my_flatten(new_arr)
       else
@@ -75,7 +83,9 @@ class Array
   def my_zip(*args)
     final_arr = []
 
-    self.each_with_index do |num, idx|
+    # self.each_with_index do |num, idx| -> before Rubocop
+    # each_with_index do |num, idx| -> before Rubocop
+    each do |num|
       final_arr << [num]
     end
 
@@ -94,7 +104,8 @@ class Array
     i = 0
     new_word = ''
 
-    while i < self.length - 1
+    # while i < self.length - 1 -> before Rubocop
+    while i < length - 1
       new_word += "#{self[i]}#{sym}"
       i += 1
     end
@@ -104,9 +115,10 @@ class Array
 
   def my_reverse
     revsd = []
-    i = self.length - 1
+    # i = self.length - 1 -> before Rubocop
+    i = length - 1
 
-    while i >= 0 
+    while i >= 0
       revsd << self[i]
       i -= 1
     end
