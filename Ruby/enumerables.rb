@@ -1,6 +1,6 @@
 class Array
 
-  #ENUMERABLE
+  # ENUMERABLE
 
   def my_each(&prc)
     i = 0
@@ -11,8 +11,6 @@ class Array
     self
   end
 
-
-
   def my_select(&prc)
     new_arr = []
     i = 0
@@ -21,11 +19,8 @@ class Array
       new_arr << self[i] if prc.call(self[i])
       i += 1
     end
-    
     new_arr
   end
-
-
 
   def my_reject(&prc)
     new_arr = []
@@ -35,11 +30,9 @@ class Array
       new_arr << self[i] if !prc.call(self[i])
       i += 1
     end
-    
+
     new_arr
   end
-
-
 
   def my_any?(&prc)
     i = 0
@@ -51,7 +44,6 @@ class Array
 
     false
   end
-
 
   def my_all?(&prc)
     i = 0
@@ -69,20 +61,18 @@ class Array
     false
   end
 
+  # ARRAY
 
-	#ARRAY
-	
-	def my_flatten(new_arr = [])
-		self.each do |ele|
+  def my_flatten(new_arr = [])
+    self.each do |ele|
       if ele.is_a?(Array)
-				new_arr = ele.my_flatten(new_arr)
+        new_arr = ele.my_flatten(new_arr)
       else
         new_arr << ele
       end
-		end
-		new_arr
+    end
+    new_arr
   end
-
 
   def my_zip(*args)
     final_arr = []
@@ -102,31 +92,27 @@ class Array
     final_arr
   end
 
-
   def my_join(sym = '')
     i = 0
     new_word = ''
 
     while i < self.length - 1
       new_word += "#{self[i]}#{sym}"
-      i += 1      
+      i += 1
     end
 
     new_word + self[-1]
   end
 
-
   def my_reverse
     revsd = []
     i = self.length - 1
-    
+
     while i >= 0 
       revsd << self[i]
-    i -= 1  
+      i -= 1
     end
 
     revsd
   end
-
-
 end
